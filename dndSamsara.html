@@ -433,31 +433,273 @@
                 </div>
                 
                 <div class="info-section">
-                    <h2 class="section-title"><span class="section-icon">🧬</span>Fitur Tiefling (Infernal)</h2>
-                    <div class="feature-highlight">
-                        <strong>Darkvision:</strong> 60 ft<br>
-                        <strong>Hellish Resistance:</strong> Resistance terhadap fire damage<br>
-                        <strong>Legacy of Nessus:</strong>
-                        <ul>
-                            <li>Level 1: Thaumaturgy</li>
-                            <li>Level 3: Hellish Rebuke (1/long rest)</li>
-                            <li>Level 5: Darkness (1/long rest)</li>
-                        </ul>
+                    <h2 class="section-title">
+                        <span class="section-icon">🧬</span>
+                        Fitur Tiefling (Infernal)
+                    </h2>
+                    
+                    <div class="basic-info">
+                        <h3>Racial Features (3)</h3>
+                        <div class="spells-list">
+                            <div class="spell-item">
+                                <div class="spell-header" onclick="toggleSpell('darkvision')">
+                                    <span class="spell-name">👁️ Darkvision</span>
+                                    <span class="spell-toggle" id="darkvision-toggle">▼</span>
+                                </div>
+                                <div class="spell-details" id="darkvision-details">
+                                    <div class="spell-content">
+                                        <div class="spell-stats">
+                                            <div class="spell-stat"><span class="spell-stat-label">Range:</span> 60 feet</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Type:</span> Passive</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Duration:</span> Permanent</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Components:</span> -</div>
+                                        </div>
+                                        <div class="spell-description">
+                                            <strong>Apa itu Darkvision?</strong><br>
+                                            Kemampuan untuk melihat dalam kegelapan total sejauh 60 feet. Kamu bisa melihat area gelap seolah-olah itu adalah cahaya redup, dan area redup seperti cahaya terang. Sangat berguna saat eksplorasi dungeon gelap atau bertarung di malam hari - kamu tidak perlu obor!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="spell-item">
+                                <div class="spell-header" onclick="toggleSpell('resistance')">
+                                    <span class="spell-name">🔥 Hellish Resistance</span>
+                                    <span class="spell-toggle" id="resistance-toggle">▼</span>
+                                </div>
+                                <div class="spell-details" id="resistance-details">
+                                    <div class="spell-content">
+                                        <div class="spell-stats">
+                                            <div class="spell-stat"><span class="spell-stat-label">Damage Type:</span> Fire</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Type:</span> Passive Resistance</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Reduction:</span> Half damage</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Duration:</span> Permanent</div>
+                                        </div>
+                                        <div class="spell-description">
+                                            <strong>Apa itu Fire Resistance?</strong><br>
+                                            Kamu hanya menerima setengah damage dari serangan api. Jadi kalau biasanya kamu kena 10 fire damage, dengan resistance kamu hanya kena 5 damage. Sangat berguna melawan dragon merah, demon, atau spell seperti Fireball!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="spell-item">
+                                <div class="spell-header" onclick="toggleSpell('legacy')">
+                                    <span class="spell-name">✨ Legacy of Nessus</span>
+                                    <span class="spell-toggle" id="legacy-toggle">▼</span>
+                                </div>
+                                <div class="spell-details" id="legacy-details">
+                                    <div class="spell-content">
+                                        <div class="spell-stats">
+                                            <div class="spell-stat"><span class="spell-stat-label">Level 1:</span> Thaumaturgy</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Level 3:</span> Hellish Rebuke (1/long rest)</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Level 5:</span> Darkness (1/long rest)</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Spellcasting:</span> Charisma</div>
+                                        </div>
+                                        <div class="spell-description">
+                                            <strong>Warisan magis dari leluhur Tiefling-mu!</strong><br>
+                                            Kamu mendapatkan spell gratis yang bertambah seiring level naik. Spell ini bisa digunakan tanpa menggunakan spell slot reguler!<br><br>
+                                            <strong>💡 Tips:</strong> Thaumaturgy bagus untuk roleplay & intimidasi, Hellish Rebuke untuk balas dendam instan, dan Darkness bisa dikombinasi dengan Darkvision-mu untuk keuntungan taktis!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
+            
+                <script>
+                    function toggleSpell(spellName) {
+                        const details = document.getElementById(spellName + '-details');
+                        const toggle = document.getElementById(spellName + '-toggle');
+                        const header = toggle.parentElement;
+                        
+                        if (details.classList.contains('expanded')) {
+                            // Collapse
+                            details.classList.remove('expanded');
+                            toggle.classList.remove('rotated');
+                            header.classList.remove('active');
+                        } else {
+                            // Expand
+                            details.classList.add('expanded');
+                            toggle.classList.add('rotated');
+                            header.classList.add('active');
+                        }
+                    }
+            
+                    // Add hover effects
+                    document.querySelectorAll('.spell-header').forEach(header => {
+                        header.addEventListener('mouseenter', function() {
+                            this.style.transform = 'scale(1.02)';
+                        });
+                        
+                        header.addEventListener('mouseleave', function() {
+                            this.style.transform = 'scale(1)';
+                        });
+                    });
+                </script>
+
+                            
                 <div class="info-section">
-                    <h2 class="section-title"><span class="section-icon">✨</span>Fitur Cleric (Light Domain)</h2>
-                    <div class="feature-highlight">
-                        <strong>Domain Spells:</strong> Burning Hands, Faerie Fire<br>
-                        <strong>Warding Flare:</strong> Reaction, impose disadvantage vs. attacker<br>
-                        <strong>Channel Divinity:</strong>
-                        <ul>
-                            <li>Radiance of the Dawn - banishes magical darkness + AoE radiant damage</li>
-                            <li>Turn Undead</li>
-                        </ul>
+                    <h2 class="section-title">
+                        <span class="section-icon">✨</span>
+                        Fitur Cleric (Light Domain)
+                    </h2>
+                    
+                    <div class="basic-info">
+                        <h3>Domain Features (4)</h3>
+                        <div class="spells-list">
+                            <div class="spell-item">
+                                <div class="spell-header" onclick="toggleSpell('domain-spells')">
+                                    <span class="spell-name">📜 Domain Spells</span>
+                                    <span class="spell-toggle" id="domain-spells-toggle">▼</span>
+                                </div>
+                                <div class="spell-details" id="domain-spells-details">
+                                    <div class="spell-content">
+                                        <div class="spell-stats">
+                                            <div class="spell-stat"><span class="spell-stat-label">Level 1:</span> Burning Hands, Faerie Fire</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Type:</span> Always Prepared</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Cost:</span> Free (tidak mengurangi spell slot)</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Progression:</span> Bertambah setiap level ganjil</div>
+                                        </div>
+                                        <div class="spell-description">
+                                            <strong>Apa itu Domain Spells?</strong><br>
+                                            Sebagai Light Domain Cleric, kamu otomatis mengetahui spell-spell khusus yang selalu "prepared" tanpa mengurangi jumlah spell harian-mu. Ini adalah bonus spell gratis!
+                                        </div>
+                                        <div class="spell-list">
+                                            <div class="spell-list-item">
+                                                <span class="spell-list-name">🔥 Burning Hands</span>
+                                                <span class="spell-list-level">Level 1</span>
+                                            </div>
+                                            <div class="spell-list-item">
+                                                <span class="spell-list-name">🧚 Faerie Fire</span>
+                                                <span class="spell-list-level">Level 1</span>
+                                            </div>
+                                        </div>
+                                        <div class="feature-tip">
+                                            <strong>💡 Tips untuk Pemula:</strong> Burning Hands bagus untuk AoE damage awal, sedangkan Faerie Fire sangat berguna untuk highlight musuh tersembunyi dan memberikan advantage ke party!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="spell-item">
+                                <div class="spell-header" onclick="toggleSpell('warding-flare')">
+                                    <span class="spell-name">⚡ Warding Flare</span>
+                                    <span class="spell-toggle" id="warding-flare-toggle">▼</span>
+                                </div>
+                                <div class="spell-details" id="warding-flare-details">
+                                    <div class="spell-content">
+                                        <div class="spell-stats">
+                                            <div class="spell-stat"><span class="spell-stat-label">Action Type:</span> Reaction</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Range:</span> 30 feet</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Uses:</span> Wisdom modifier per long rest</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Effect:</span> Impose disadvantage</div>
+                                        </div>
+                                        <div class="spell-description">
+                                            <strong>Apa itu Warding Flare?</strong><br>
+                                            Ketika musuh menyerang kamu atau ally dalam 30 feet, kamu bisa menggunakan reaction untuk memancarkan cahaya terang yang menyilaukan penyerang. Ini membuat attack roll mereka punya disadvantage (roll 2 d20, ambil yang lebih rendah).
+                                        </div>
+                                        <div class="example-box">
+                                            <div class="example-title">🎮 Contoh Penggunaan:</div>
+                                            Orc menyerang Fighter-mu dengan attack roll 15. Kamu gunakan Warding Flare sebagai reaction - sekarang Orc harus roll ulang dengan disadvantage, mungkin jadi miss!
+                                        </div>
+                                        <div class="feature-tip">
+                                            <strong>💡 Tips untuk Pemula:</strong> Gunakan ini untuk melindungi ally yang sedang low HP atau ketika musuh hampir hit dengan serangan kritikal. Sangat efektif untuk tank support!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="spell-item">
+                                <div class="spell-header" onclick="toggleSpell('radiance-dawn')">
+                                    <span class="spell-name">🌅 Radiance of the Dawn</span>
+                                    <span class="spell-toggle" id="radiance-dawn-toggle">▼</span>
+                                </div>
+                                <div class="spell-details" id="radiance-dawn-details">
+                                    <div class="spell-content">
+                                        <div class="spell-stats">
+                                            <div class="spell-stat"><span class="spell-stat-label">Action Type:</span> Action</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Range:</span> 30-foot radius</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Uses:</span> 1 per short/long rest</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Damage:</span> 2d10 + Cleric level radiant</div>
+                                        </div>
+                                        <div class="spell-description">
+                                            <strong>Channel Divinity: Radiance of the Dawn</strong><br>
+                                            Kamu memancarkan cahaya terang dalam radius 30 feet yang menghancurkan kegelapan magis DAN memberikan radiant damage ke semua hostile creature di area tersebut. Mereka bisa Constitution save untuk half damage.
+                                        </div>
+                                        <div class="example-box">
+                                            <div class="example-title">🎮 Contoh Penggunaan:</div>
+                                            Party-mu terjebak dalam Darkness spell dan dikeroyok 4 skeleton. Kamu gunakan Radiance of the Dawn - kegelapan hilang, semua skeleton kena damage, dan party bisa melihat lagi!
+                                        </div>
+                                        <div class="feature-tip">
+                                            <strong>💡 Tips untuk Pemula:</strong> Perfect untuk situasi dimana banyak musuh mengelilingi party atau ketika ada Darkness/magical darkness yang mengganggu. Damage-nya juga lumayan tinggi!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="spell-item">
+                                <div class="spell-header" onclick="toggleSpell('turn-undead')">
+                                    <span class="spell-name">💀 Turn Undead</span>
+                                    <span class="spell-toggle" id="turn-undead-toggle">▼</span>
+                                </div>
+                                <div class="spell-details" id="turn-undead-details">
+                                    <div class="spell-content">
+                                        <div class="spell-stats">
+                                            <div class="spell-stat"><span class="spell-stat-label">Action Type:</span> Action</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Range:</span> 30 feet</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Uses:</span> 1 per short/long rest</div>
+                                            <div class="spell-stat"><span class="spell-stat-label">Effect:</span> Fear undead creatures</div>
+                                        </div>
+                                        <div class="spell-description">
+                                            <strong>Channel Divinity: Turn Undead</strong><br>
+                                            Kamu mengangkat holy symbol dan mengucapkan doa. Setiap undead dalam 30 feet yang bisa melihat atau mendengar kamu harus Wisdom saving throw. Jika gagal, mereka "turned" (takut dan harus lari) selama 1 menit.
+                                        </div>
+                                        <div class="example-box">
+                                            <div class="example-title">🎮 Contoh Penggunaan:</div>
+                                            Kalian diserang 6 zombie di koridor sempit. Kamu Turn Undead - 4 zombie gagal save dan lari ketakutan, sekarang kalian hanya lawan 2 zombie sisanya!
+                                        </div>
+                                        <div class="feature-tip">
+                                            <strong>💡 Tips untuk Pemula:</strong> Sangat efektif melawan undead swarm atau ketika party kewalahan lawan banyak undead sekaligus. Di level tinggi, bisa langsung destroy undead lemah!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            
+                <script>
+                    function toggleSpell(spellName) {
+                        const details = document.getElementById(spellName + '-details');
+                        const toggle = document.getElementById(spellName + '-toggle');
+                        const header = toggle.parentElement;
+                        
+                        if (details.classList.contains('expanded')) {
+                            // Collapse
+                            details.classList.remove('expanded');
+                            toggle.classList.remove('rotated');
+                            header.classList.remove('active');
+                        } else {
+                            // Expand
+                            details.classList.add('expanded');
+                            toggle.classList.add('rotated');
+                            header.classList.add('active');
+                        }
+                    }
+            
+                    // Add hover effects
+                    document.querySelectorAll('.spell-header').forEach(header => {
+                        header.addEventListener('mouseenter', function() {
+                            this.style.transform = 'scale(1.02)';
+                        });
+                        
+                        header.addEventListener('mouseleave', function() {
+                            this.style.transform = 'scale(1)';
+                        });
+                    });
+                </script>
             </div>
         </div>
         
