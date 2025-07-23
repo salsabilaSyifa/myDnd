@@ -314,6 +314,304 @@
         .scroll-shadow {
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
         }
+        
+        .editable-field {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .editable-field:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        
+        .editable-field.editing {
+            cursor: default;
+        }
+        
+        .edit-input {
+            border: 1px solid #3b82f6;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            background: white;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+            min-width: 60px;
+        }
+        
+        .edit-controls {
+            display: inline-flex;
+            gap: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        
+        .edit-btn {
+            padding: 2px 6px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background-color 0.2s;
+        }
+        
+        .save-btn {
+            background-color: #10b981;
+            color: white;
+        }
+        
+        .save-btn:hover {
+            background-color: #059669;
+        }
+        
+        .cancel-btn {
+            background-color: #ef4444;
+            color: white;
+        }
+        
+        .cancel-btn:hover {
+            background-color: #dc2626;
+        }
+        
+        .edit-icon {
+            opacity: 0;
+            transition: opacity 0.2s;
+            margin-left: 4px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .editable-field:hover .edit-icon {
+            opacity: 1;
+        }
+        
+        .update-hint {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            font-style: italic;
+        }
+        
+        .equipment-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            margin: 8px 0;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .equipment-item:hover {
+            background: #f1f5f9;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .equipment-text {
+            flex: 1;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+            min-height: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .equipment-text:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        .equipment-text.editing {
+            cursor: default;
+            background: transparent;
+        }
+        
+        .equipment-controls {
+            display: flex;
+            gap: 8px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .equipment-item:hover .equipment-controls {
+            opacity: 1;
+        }
+        
+        .control-btn {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .edit-btn {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .edit-btn:hover {
+            background: #2563eb;
+        }
+        
+        .delete-btn {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .delete-btn:hover {
+            background: #dc2626;
+        }
+        
+        .save-btn {
+            background: #10b981;
+            color: white;
+        }
+        
+        .save-btn:hover {
+            background: #059669;
+        }
+        
+        .cancel-btn {
+            background: #6b7280;
+            color: white;
+        }
+        
+        .cancel-btn:hover {
+            background: #4b5563;
+        }
+        
+        .equipment-input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 2px solid #3b82f6;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+            background: white;
+        }
+        
+        .add-item-container {
+            margin-top: 20px;
+            padding: 16px;
+            background: #f0f9ff;
+            border: 2px dashed #3b82f6;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .add-item-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        
+        .add-item-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .add-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .add-btn:hover {
+            background: #2563eb;
+        }
+        
+        .item-count {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+        
+        .delete-confirmation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .delete-modal {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        .delete-modal h3 {
+            margin: 0 0 16px 0;
+            color: #374151;
+        }
+        
+        .delete-modal p {
+            margin: 0 0 20px 0;
+            color: #6b7280;
+        }
+        
+        .delete-modal-controls {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        
+        .confirm-delete-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .confirm-delete-btn:hover {
+            background: #dc2626;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6b7280;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -327,7 +625,17 @@
             <div class="character-portrait">
                 <div class="portrait-gallery">
                     <h2 class="section-title"><span class="section-icon">📷</span>Galeri Karakter</h2>
-                    <blockquote class="imgur-embed-pub" lang="en" data-id="a/p0i9y3O"  ><a href="//imgur.com/a/p0i9y3O">My Dnd Character</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>                </div>
+                    <img src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/My%20Dnd%20Character%20-%20Imgur%20(1).png" alt="Samsara Lú Inanis - Form Pertama" class="portrait-image">
+                    <figcaption>Form Pertama (Base, Awakening, Battle)</figcaption>
+                    <img src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/My%20Dnd%20Character%20-%20Imgur%20(2).png" alt="Samsara Lú Inanis - Form Kedua" class="portrait-image">
+                    <figcaption>Form Kedua (Battle Mask)</figcaption>
+                    <img src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/My%20Dnd%20Character%20-%20Imgur%20(3).png" alt="Samsara Lú Inanis - Token Form Base" class="portrait-image">
+                    <figcaption>Token Form Base</figcaption>
+                    <img src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/My%20Dnd%20Character%20-%20Imgur%20(4).png" alt="Samsara Lú Inanis - Token Form Mask" class="portrait-image">
+                    <figcaption>Token Form Mask</figcaption>
+                    <img src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/My%20Dnd%20Character%20-%20Imgur%20(5).png" alt="Samsara Lú Inanis - Token Form Awakening" class="portrait-image">
+                    <figcaption>Token Form Awakening</figcaption>
+                </div>
             </div>
             
             <div class="character-info">
@@ -347,8 +655,8 @@
                             <div>~25 tahun</div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">Level</div>
-                            <div>1</div>
+                            <div class="info-label">Alignment</div>
+                            <div>Lawful neutral</div>
                         </div>
                         <div class="info-item">
                             <div class="info-label">Ras</div>
@@ -374,32 +682,44 @@
                     <div class="stats-grid">
                         <div class="stat-box">
                             <div class="stat-name">STR</div>
-                            <div class="stat-value">13</div>
+                            <div class="stat-value">
+                                <span class="editable-field" data-field="STR" data-value="13">13</span>
+                            </div>
                             <div class="stat-modifier">(+1)</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-name">DEX</div>
-                            <div class="stat-value">8</div>
+                            <div class="stat-value">
+                                <span class="editable-field" data-field="DEX" data-value="8">8</span>
+                            </div>
                             <div class="stat-modifier">(-1)</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-name">CON</div>
-                            <div class="stat-value">14</div>
+                            <div class="stat-value">
+                                <span class="editable-field" data-field="CON" data-value="14">14</span>
+                            </div>
                             <div class="stat-modifier">(+2)</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-name">INT</div>
-                            <div class="stat-value">10</div>
+                            <div class="stat-value">
+                                <span class="editable-field" data-field="INT" data-value="10">10</span>
+                            </div>
                             <div class="stat-modifier">(+0)</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-name">WIS</div>
-                            <div class="stat-value">16</div>
+                            <div class="stat-value">
+                                <span class="editable-field" data-field="WIS" data-value="16">16</span>
+                            </div>
                             <div class="stat-modifier">(+3)</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-name">CHA</div>
-                            <div class="stat-value">14</div>
+                            <div class="stat-value">
+                                <span class="editable-field" data-field="CHA" data-value="14">14</span>
+                            </div>
                             <div class="stat-modifier">(+2)</div>
                         </div>
                     </div>
@@ -407,31 +727,52 @@
                     <div class="combat-stats">
                         <div class="info-item">
                             <div class="info-label">HP</div>
-                            <div>10</div>
+                            <div>
+                                <span class="editable-field" data-field="HP" data-value="10">10</span>
+                                <span class="edit-icon">✏️</span>
+                            </div>
                         </div>
                         <div class="info-item">
                             <div class="info-label">AC</div>
-                            <div>16 (Scale Mail + Shield)</div>
+                            <div>
+                                <span class="editable-field" data-field="AC" data-value="16">16</span>
+                                (<span class="editable-field" data-field="AC_DESC" data-value="Scale Mail + Shield" data-type="text">Scale Mail + Shield</span>)
+                                <span class="edit-icon">✏️</span>
+                            </div>
                         </div>
                         <div class="info-item">
                             <div class="info-label">Spell Save DC</div>
-                            <div>13</div>
+                            <div>
+                                <span class="editable-field" data-field="SPELL_DC" data-value="13">13</span>
+                                <span class="edit-icon">✏️</span>
+                            </div>
                         </div>
                         <div class="info-item">
                             <div class="info-label">Spell Attack Bonus</div>
-                            <div>+5</div>
+                            <div>
+                                +<span class="editable-field" data-field="SPELL_BONUS" data-value="5">5</span>
+                                <span class="edit-icon">✏️</span>
+                            </div>
                         </div>
                         <div class="info-item">
                             <div class="info-label">Initiative</div>
-                            <div>-1</div>
+                            <div>
+                                <span class="editable-field" data-field="INITIATIVE" data-value="-1">-1</span>
+                                <span class="edit-icon">✏️</span>
+                            </div>
                         </div>
                         <div class="info-item">
                             <div class="info-label">Speed</div>
-                            <div>30 ft</div>
+                            <div>
+                                <span class="editable-field" data-field="SPEED" data-value="30 ft" data-type="text">30 ft</span>
+                                <span class="edit-icon">✏️</span>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="update-hint">💡 Klik pada nilai mana saja untuk mengeditnya</div>
                 </div>
-                
+
                 <div class="info-section">
                     <h2 class="section-title">
                         <span class="section-icon">🧬</span>
@@ -439,7 +780,6 @@
                     </h2>
                     
                     <div class="basic-info">
-                        <h3>Racial Features (3)</h3>
                         <div class="spells-list">
                             <div class="spell-item">
                                 <div class="spell-header" onclick="toggleSpell('darkvision')">
@@ -547,7 +887,6 @@
                     </h2>
                     
                     <div class="basic-info">
-                        <h3>Domain Features (4)</h3>
                         <div class="spells-list">
                             <div class="spell-item">
                                 <div class="spell-header" onclick="toggleSpell('domain-spells')">
@@ -700,14 +1039,13 @@
                         });
                     });
                 </script>
-            </div>
-        </div>
+
         
         <div class="info-section">
             <h2 class="section-title"><span class="section-icon">🔮</span>Spell & Kemampuan Magis</h2>
             <div class="basic-info">
                 <div>
-                    <h3 style="color: #c9b037; margin-bottom: 10px;">Cantrips (4)</h3>
+                    <h3 style="color: #c9b037; margin-bottom: 10px;">Cantrips</h3>
                     <div class="spells-list">
                         <div class="spell-item">
                             <div class="spell-header" onclick="toggleSpell('thaumaturgy')">
@@ -908,20 +1246,103 @@
         </div>
         
         <div class="info-section">
-            <h2 class="section-title"><span class="section-icon">🎒</span>Equipment</h2>
-            <ul class="equipment-list">
-                <li>Scale Mail</li>
-                <li>Shield</li>
-                <li>Mace</li>
-                <li>Light Crossbow + 20 bolts</li>
-                <li>Explorer's Pack</li>
-                <li>Holy Symbol</li>
-                <li>Dagger (hidden blade aesthetic)</li>
-                <li>Spiritual tome (Hermit discovery)</li>
-                <li>Ritual jubah + topeng ringan untuk stealth mission</li>
+            <h2 class="section-title">
+                <span class="section-icon">🎒</span>
+                Equipment
+            </h2>
+            
+            <div class="item-count">
+                Total items: <span id="item-count">9</span>
+            </div>
+            
+            <ul class="equipment-list" id="equipment-list">
+                <li class="equipment-item" data-id="1">
+                    <div class="equipment-text">Scale Mail</div>
+                    <div class="equipment-controls">
+                        <button class="control-btn edit-btn" onclick="editItem(this)">✏️ Edit</button>
+                        <button class="control-btn delete-btn" onclick="confirmDelete(this)">🗑️ Delete</button>
+                    </div>
+                </li>
+                <li class="equipment-item" data-id="2">
+                    <div class="equipment-text">Shield</div>
+                    <div class="equipment-controls">
+                        <button class="control-btn edit-btn" onclick="editItem(this)">✏️ Edit</button>
+                        <button class="control-btn delete-btn" onclick="confirmDelete(this)">🗑️ Delete</button>
+                    </div>
+                </li>
+                <li class="equipment-item" data-id="3">
+                    <div class="equipment-text">Mace</div>
+                    <div class="equipment-controls">
+                        <button class="control-btn edit-btn" onclick="editItem(this)">✏️ Edit</button>
+                        <button class="control-btn delete-btn" onclick="confirmDelete(this)">🗑️ Delete</button>
+                    </div>
+                </li>
+                <li class="equipment-item" data-id="4">
+                    <div class="equipment-text">Light Crossbow + 20 bolts</div>
+                    <div class="equipment-controls">
+                        <button class="control-btn edit-btn" onclick="editItem(this)">✏️ Edit</button>
+                        <button class="control-btn delete-btn" onclick="confirmDelete(this)">🗑️ Delete</button>
+                    </div>
+                </li>
+                <li class="equipment-item" data-id="5">
+                    <div class="equipment-text">Explorer's Pack</div>
+                    <div class="equipment-controls">
+                        <button class="control-btn edit-btn" onclick="editItem(this)">✏️ Edit</button>
+                        <button class="control-btn delete-btn" onclick="confirmDelete(this)">🗑️ Delete</button>
+                    </div>
+                </li>
+                <li class="equipment-item" data-id="6">
+                    <div class="equipment-text">Holy Symbol</div>
+                    <div class="equipment-controls">
+                        <button class="control-btn edit-btn" onclick="editItem(this)">✏️ Edit</button>
+                        <button class="control-btn delete-btn" onclick="confirmDelete(this)">🗑️ Delete</button>
+                    </div>
+                </li>
+                <li class="equipment-item" data-id="7">
+                    <div class="equipment-text">Dagger (hidden blade aesthetic)</div>
+                    <div class="equipment-controls">
+                        <button class="control-btn edit-btn" onclick="editItem(this)">✏️ Edit</button>
+                        <button class="control-btn delete-btn" onclick="confirmDelete(this)">🗑️ Delete</button>
+                    </div>
+                </li>
+                <li class="equipment-item" data-id="8">
+                    <div class="equipment-text">Spiritual tome (Hermit discovery)</div>
+                    <div class="equipment-controls">
+                        <button class="control-btn edit-btn" onclick="editItem(this)">✏️ Edit</button>
+                        <button class="control-btn delete-btn" onclick="confirmDelete(this)">🗑️ Delete</button>
+                    </div>
+                </li>
+                <li class="equipment-item" data-id="9">
+                    <div class="equipment-text">Ritual jubah + topeng ringan untuk stealth mission</div>
+                    <div class="equipment-controls">
+                        <button class="control-btn edit-btn" onclick="editItem(this)">✏️ Edit</button>
+                        <button class="control-btn delete-btn" onclick="confirmDelete(this)">🗑️ Delete</button>
+                    </div>
+                </li>
             </ul>
+            
+            <div class="add-item-container">
+                <input type="text" 
+                       class="add-item-input" 
+                       id="new-item-input" 
+                       placeholder="Add new equipment item..."
+                       onkeypress="handleAddKeypress(event)">
+                <br>
+                <button class="add-btn" onclick="addNewItem()">➕ Add Equipment</button>
+            </div>
         </div>
         
+        <!-- Delete Confirmation Modal -->
+        <div id="delete-modal" class="delete-confirmation" style="display: none;">
+            <div class="delete-modal">
+                <h3>Confirm Delete</h3>
+                <p>Are you sure you want to delete "<span id="delete-item-name"></span>"?</p>
+                <div class="delete-modal-controls">
+                    <button class="control-btn cancel-btn" onclick="cancelDelete()">Cancel</button>
+                    <button class="confirm-delete-btn" onclick="executeDelete()">Delete</button>
+                </div>
+            </div>
+        </div>        
         <div class="backstory-section scroll-shadow">
             <h2 class="section-title"><span class="section-icon">📖</span>Latar Belakang</h2>
             
@@ -970,7 +1391,7 @@
             
             <h3 style="color: #d4af37; margin-bottom: 15px;">💠 Ordo Aequitas – Watchers of the Veil</h3>
             <div class="backstory-text">
-                Ordo ini adalah faksi watchers yang memelihara batas antara dunia fana dan pasca-kematian. Mereka menggabungkan cahaya suci dan taktik diam-diam (stealth), melatih para cleric-assassin untuk menghentikan kekacauan sebelum meledak. Samsara menjadi "agent of balance," bukan sekadar pembunuh bayangan.
+                Ordo ini adalah faksi watchers multiras yang memelihara batas antara dunia fana dan pasca-kematian. Mereka menggabungkan cahaya suci dan taktik diam-diam (stealth), melatih para cleric-assassin untuk menghentikan kekacauan sebelum meledak. Samsara menjadi "agent of balance," bukan sekadar pembunuh bayangan.
             </div>
             
             <h3 style="color: #d4af37; margin-bottom: 15px; margin-top: 30px;">🔮 Motivasi & Janji</h3>
@@ -1000,5 +1421,245 @@
             }
         }
     </script>
+    
+    <script>
+// JavaScript untuk fitur editing
+document.addEventListener('DOMContentLoaded', function() {
+    let currentlyEditing = null;
+
+    // Function to calculate ability modifier
+    function getModifier(score) {
+        return Math.floor((score - 10) / 2);
+    }
+
+    // Function to format modifier
+    function formatModifier(modifier) {
+        return modifier >= 0 ? `(+${modifier})` : `(${modifier})`;
+    }
+
+    // Function to update modifier display
+    function updateModifier(statName, newValue) {
+        const modifier = getModifier(parseInt(newValue));
+        const statBox = document.querySelector(`[data-field="${statName}"]`).closest('.stat-box');
+        if (statBox) {
+            const modifierDiv = statBox.querySelector('.stat-modifier');
+            if (modifierDiv) {
+                modifierDiv.textContent = formatModifier(modifier);
+            }
+        }
+    }
+
+    // Function to start editing
+    function startEdit(element) {
+        if (currentlyEditing) return;
+        
+        currentlyEditing = element;
+        const field = element.getAttribute('data-field');
+        const currentValue = element.getAttribute('data-value');
+        const isText = element.getAttribute('data-type') === 'text';
+        
+        element.classList.add('editing');
+        
+        const input = document.createElement('input');
+        input.type = isText ? 'text' : 'number';
+        input.value = currentValue;
+        input.className = 'edit-input';
+        
+        const controls = document.createElement('span');
+        controls.className = 'edit-controls';
+        
+        const saveBtn = document.createElement('button');
+        saveBtn.textContent = '✓';
+        saveBtn.className = 'edit-btn save-btn';
+        
+        const cancelBtn = document.createElement('button');
+        cancelBtn.textContent = '✗';
+        cancelBtn.className = 'edit-btn cancel-btn';
+        
+        controls.appendChild(saveBtn);
+        controls.appendChild(cancelBtn);
+        
+        const originalContent = element.innerHTML;
+        
+        element.innerHTML = '';
+        element.appendChild(input);
+        element.appendChild(controls);
+        
+        input.focus();
+        input.select();
+        
+        function save() {
+            const newValue = input.value.trim();
+            if (newValue !== '') {
+                element.setAttribute('data-value', newValue);
+                element.textContent = newValue;
+                element.classList.remove('editing');
+                currentlyEditing = null;
+                
+                if (['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'].includes(field)) {
+                    updateModifier(field, newValue);
+                }
+            } else {
+                cancel();
+            }
+        }
+        
+        function cancel() {
+            element.innerHTML = originalContent;
+            element.classList.remove('editing');
+            currentlyEditing = null;
+        }
+        
+        saveBtn.addEventListener('click', save);
+        cancelBtn.addEventListener('click', cancel);
+        
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                save();
+            } else if (e.key === 'Escape') {
+                cancel();
+            }
+        });
+        
+        document.addEventListener('click', function outsideClick(e) {
+            if (!element.contains(e.target)) {
+                cancel();
+                document.removeEventListener('click', outsideClick);
+            }
+        });
+    }
+
+    document.querySelectorAll('.editable-field').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (!element.classList.contains('editing')) {
+                startEdit(element);
+            }
+        });
+    });
+});
+</script>
+<script>
+// Equipment management JavaScript
+let nextEquipmentId = 10;
+let equipmentItemToDelete = null;
+let currentlyEditingEquipment = null;
+
+function updateEquipmentItemCount() {
+    const count = document.querySelectorAll('.equipment-item').length;
+    document.getElementById('item-count').textContent = count;
+}
+
+function editItem(button) {
+    if (currentlyEditingEquipment) return;
+
+    const item = button.closest('.equipment-item');
+    const textDiv = item.querySelector('.equipment-text');
+    const originalText = textDiv.textContent;
+
+    currentlyEditingEquipment = textDiv;
+    textDiv.classList.add('editing');
+
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = originalText;
+    input.className = 'equipment-input';
+
+    const saveBtn = document.createElement('button');
+    saveBtn.textContent = '✓';
+    saveBtn.className = 'control-btn save-btn';
+    saveBtn.onclick = function () {
+        textDiv.textContent = input.value.trim();
+        textDiv.classList.remove('editing');
+        currentlyEditingEquipment = null;
+        updateEquipmentItemCount();
+    };
+
+    const cancelBtn = document.createElement('button');
+    cancelBtn.textContent = '✗';
+    cancelBtn.className = 'control-btn cancel-btn';
+    cancelBtn.onclick = function () {
+        textDiv.textContent = originalText;
+        textDiv.classList.remove('editing');
+        currentlyEditingEquipment = null;
+    };
+
+    textDiv.textContent = '';
+    textDiv.appendChild(input);
+    textDiv.appendChild(saveBtn);
+    textDiv.appendChild(cancelBtn);
+    input.focus();
+}
+
+function confirmDelete(button) {
+    const item = button.closest('.equipment-item');
+    const itemName = item.querySelector('.equipment-text').textContent;
+    equipmentItemToDelete = item;
+    document.getElementById('delete-item-name').textContent = itemName;
+    document.getElementById('delete-modal').style.display = 'block';
+}
+
+function cancelDelete() {
+    document.getElementById('delete-modal').style.display = 'none';
+    equipmentItemToDelete = null;
+}
+
+function executeDelete() {
+    if (equipmentItemToDelete) {
+        equipmentItemToDelete.remove();
+        equipmentItemToDelete = null;
+        updateEquipmentItemCount();
+    }
+    document.getElementById('delete-modal').style.display = 'none';
+}
+
+function addNewItem() {
+    const input = document.getElementById('new-item-input');
+    const newItemText = input.value.trim();
+    if (newItemText === '') return;
+
+    const list = document.getElementById('equipment-list');
+    const li = document.createElement('li');
+    li.className = 'equipment-item';
+    li.setAttribute('data-id', nextEquipmentId++);
+
+    const textDiv = document.createElement('div');
+    textDiv.className = 'equipment-text';
+    textDiv.textContent = newItemText;
+
+    const controlsDiv = document.createElement('div');
+    controlsDiv.className = 'equipment-controls';
+
+    const editBtn = document.createElement('button');
+    editBtn.className = 'control-btn edit-btn';
+    editBtn.textContent = '✏️ Edit';
+    editBtn.onclick = function () { editItem(editBtn); };
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'control-btn delete-btn';
+    deleteBtn.textContent = '🗑️ Delete';
+    deleteBtn.onclick = function () { confirmDelete(deleteBtn); };
+
+    controlsDiv.appendChild(editBtn);
+    controlsDiv.appendChild(deleteBtn);
+    li.appendChild(textDiv);
+    li.appendChild(controlsDiv);
+    list.appendChild(li);
+    input.value = '';
+
+    updateEquipmentItemCount();
+}
+
+function handleAddKeypress(event) {
+    if (event.key === 'Enter') {
+        addNewItem();
+    }
+}
+
+// Inisialisasi count
+document.addEventListener('DOMContentLoaded', updateEquipmentItemCount);
+</script>
+
 </body>
 </html>
