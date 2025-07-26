@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Seraphina Valorheart - Lembar Karakter D&D</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(ellipse at top, #1a1a2e, #16213e, #0d1421);
+            color: #f0f0f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .character-sheet {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+        }
+
+        /* Hero Header Section */
+        .hero-header {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(255, 215, 0, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23d4af37" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffd700" stop-opacity="0.05"/></linearGradient></defs><rect width="1000" height="300" fill="url(%23bg)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: #1a1a2e;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .character-name {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .character-info {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 500;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: 350px 1fr 350px;
+            gap: 30px;
+            padding: 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .panel {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Enhanced Stat Blocks */
+        .stat-block {
+            background: linear-gradient(145deg, rgba(58, 58, 78, 0.95), rgba(46, 46, 63, 0.95));
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #ffd700, #d4af37);
+            opacity: 0.7;
+        }
+
+        .stat-block:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+
+        .stat-block h3 {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .stat-block h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+
+        /* Ability Scores Enhancement */
+        .ability-scores {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .ability {
+            text-align: center;
+            background: linear-gradient(145deg, #2a2a3e, #1e1e2f);
+            border-radius: 12px;
+            padding: 15px 10px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .ability:hover {
+            transform: scale(1.05);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .ability-name {
+            font-size: 0.9em;
+            color: #d4af37;
+            margin-bottom: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .ability-score {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .ability-modifier {
+            font-size: 1.1em;
+            color: #aaa;
+            font-weight: 500;
+        }
+
+        /* Skills Grid Enhancement */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+
+        .skill {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: linear-gradient(145deg, #2a2a3e, #1e1e2f);
+            border-radius: 8px;
+            border: 1px solid rgba(68, 68, 68, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .skill:hover {
+            transform: translateX(5px);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .skill.proficient {
+            border-color: #d4af37;
+            background: linear-gradient(145deg, rgba(212, 175, 55, 0.1), rgba(42, 42, 30, 0.8));
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
+        }
+
+        .skill.proficient::before {
+            content: '★';
+            color: #d4af37;
+            margin-right: 8px;
+            font-size: 0.8em;
+        }
+
+        /* Combat Stats Enhancement */
+        .combat-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .combat-stat {
+            background: linear-gradient(145deg, #2a2a3e, #1e1e2f);
+            border-radius: 12px;
+            padding: 20px 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .combat-stat:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .combat-stat-label {
+            font-size: 0.9em;
+            color: #d4af37;
+            margin-bottom: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .combat-stat-value {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /* HP Bar Enhancement */
+        .hp-bar {
+            background: linear-gradient(145deg, #333, #222);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+            height: 30px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hp-fill {
+            background: linear-gradient(90deg, #ff4444, #ff6666, #ff8888);
+            height: 100%;
+            width: 100%;
+            transition: width 0.5s ease;
+            box-shadow: 0 0 20px rgba(255, 68, 68, 0.3);
+        }
+
+        .hp-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-size: 1.1em;
+        }
+
+        /* Features and Traits Enhancement */
+        .personality-trait, .features-list li {
+            background: linear-gradient(145deg, rgba(42, 42, 58, 0.8), rgba(30, 30, 47, 0.8));
+            margin-bottom: 15px;
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .personality-trait:hover, .features-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .trait-label, .feature-name {
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+            letter-spacing: 0.5px;
+        }
+
+        .trait-text, .feature-description {
+            font-size: 0.95em;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Gallery Enhancement */
+        .character-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .gallery-item {
+            text-align: center;
+            background: linear-gradient(145deg, rgba(42, 42, 58, 0.8), rgba(30, 30, 47, 0.8));
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid rgba(68, 68, 68, 0.5);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #d4af37;
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+        }
+
+        .portrait-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid rgba(85, 85, 85, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .portrait-image {
+            border-color: #d4af37;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .image-caption {
+            margin-top: 12px;
+            font-size: 0.9em;
+            color: #d4af37;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Lists Enhancement */
+        .equipment-list, .features-list {
+            list-style: none;
+        }
+
+        .equipment-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+            font-size: 0.95em;
+            color: #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .equipment-list li:hover {
+            color: #d4af37;
+            transform: translateX(5px);
+        }
+
+        .equipment-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Organizations Enhancement */
+        .organizations {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .organization {
+            background: linear-gradient(145deg, rgba(42, 42, 58, 0.8), rgba(30, 30, 47, 0.8));
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(68, 68, 68, 0.5);
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .organization:hover {
+            transform: translateY(-2px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .org-name {
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 6px;
+            font-size: 1.05em;
+        }
+
+        /* Backstory Enhancement */
+        .backstory-content {
+            line-height: 1.7;
+            color: #e8e8e8;
+        }
+
+        .backstory-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 0.98em;
+            text-indent: 20px;
+        }
+
+        .backstory-content p:first-child::first-letter {
+            font-size: 3em;
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            float: left;
+            line-height: 1;
+            margin: 0 8px 0 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .main-content {
+                grid-template-columns: 320px 1fr 320px;
+                gap: 25px;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 25px;
+            }
+            
+            .character-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 15px;
+            }
+            
+            .portrait-image {
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-header {
+                padding: 40px 20px;
+            }
+            
+            .main-content {
+                padding: 20px;
+                gap: 15px;
+            }
+            
+            .ability-scores {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .combat-stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #d4af37, #ffd700);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #ffd700, #d4af37);
+        }
+    </style>
+</head>
+<body>
+    <div class="character-sheet">
+        <!-- Hero Header -->
+        <div class="hero-header">
+            <div class="character-name">Seraphina "Sera" Valorheart</div>
+            <div class="character-info">Perempuan Dragonborn Paladin Level 3 | Latar Belakang Bangsawan | Lawful Good</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Panel -->
+            <div class="panel left-panel">
+                <!-- Ability Scores -->
+                <div class="stat-block">
+                    <h3>Ability Scores</h3>
+                    <div class="ability-scores">
+                        <div class="ability">
+                            <div class="ability-name">STR</div>
+                            <div class="ability-score">15</div>
+                            <div class="ability-modifier">+2</div>
+                        </div>
+                        <div class="ability">
+                            <div class="ability-name">DEX</div>
+                            <div class="ability-score">10</div>
+                            <div class="ability-modifier">+0</div>
+                        </div>
+                        <div class="ability">
+                            <div class="ability-name">CON</div>
+                            <div class="ability-score">13</div>
+                            <div class="ability-modifier">+1</div>
+                        </div>
+                        <div class="ability">
+                            <div class="ability-name">INT</div>
+                            <div class="ability-score">10</div>
+                            <div class="ability-modifier">+0</div>
+                        </div>
+                        <div class="ability">
+                            <div class="ability-name">WIS</div>
+                            <div class="ability-score">13</div>
+                            <div class="ability-modifier">+1</div>
+                        </div>
+                        <div class="ability">
+                            <div class="ability-name">CHA</div>
+                            <div class="ability-score">14</div>
+                            <div class="ability-modifier">+2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saving Throws -->
+                <div class="stat-block">
+                    <h3>Saving Throws</h3>
+                    <div class="skills-grid">
+                        <div class="skill">
+                            <span class="skill-name">Kekuatan</span>
+                            <span class="skill-bonus">+2</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Ketangkasan</span>
+                            <span class="skill-bonus">+0</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Konstitusi</span>
+                            <span class="skill-bonus">+1</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Kecerdasan</span>
+                            <span class="skill-bonus">+0</span>
+                        </div>
+                        <div class="skill proficient">
+                            <span class="skill-name">Kebijaksanaan</span>
+                            <span class="skill-bonus">+3</span>
+                        </div>
+                        <div class="skill proficient">
+                            <span class="skill-name">Karisma</span>
+                            <span class="skill-bonus">+4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="stat-block">
+                    <h3>Kemampuan</h3>
+                    <div class="skills-grid">
+                        <div class="skill">
+                            <span class="skill-name">Acrobatics</span>
+                            <span class="skill-bonus">+0</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Animal Handling</span>
+                            <span class="skill-bonus">+1</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Arcana</span>
+                            <span class="skill-bonus">+0</span>
+                        </div>
+                        <div class="skill proficient">
+                            <span class="skill-name">Athletics</span>
+                            <span class="skill-bonus">+2</span>
+                        </div>
+                        <div class="skill proficient">
+                            <span class="skill-name">Deception</span>
+                            <span class="skill-bonus">+2</span>
+                        </div>
+                        <div class="skill proficient">
+                            <span class="skill-name">History</span>
+                            <span class="skill-bonus">+2</span>
+                        </div>
+                        <div class="skill proficient">
+                            <span class="skill-name">Insight</span>
+                            <span class="skill-bonus">+3</span>
+                        </div>
+                        <div class="skill proficient">
+                            <span class="skill-name">Intimidation</span>
+                            <span class="skill-bonus">+2</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Investigation</span>
+                            <span class="skill-bonus">+0</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Medicine</span>
+                            <span class="skill-bonus">+1</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Nature</span>
+                            <span class="skill-bonus">+0</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Perception</span>
+                            <span class="skill-bonus">+1</span>
+                        </div>
+                        <div class="skill proficient">
+                            <span class="skill-name">Performance</span>
+                            <span class="skill-bonus">+2</span>
+                        </div>
+                        <div class="skill proficient">
+                            <span class="skill-name">Persuasion</span>
+                            <span class="skill-bonus">+4</span>
+                        </div>
+                        <div class="skill proficient">
+                            <span class="skill-name">Religion</span>
+                            <span class="skill-bonus">+2</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Sleight of Hand</span>
+                            <span class="skill-bonus">+0</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Stealth</span>
+                            <span class="skill-bonus">+0</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Survival</span>
+                            <span class="skill-bonus">+1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Panel -->
+            <div class="panel center-panel">
+                <!-- Combat Stats -->
+                <div class="stat-block">
+                    <h3>Combat Stats</h3>
+                    <div class="combat-stats">
+                        <div class="combat-stat">
+                            <div class="combat-stat-label">Armor Class</div>
+                            <div class="combat-stat-value">12</div>
+                        </div>
+                        <div class="combat-stat">
+                            <div class="combat-stat-label">Inisiatif</div>
+                            <div class="combat-stat-value">+0</div>
+                        </div>
+                        <div class="combat-stat">
+                            <div class="combat-stat-label">Kecepatan</div>
+                            <div class="combat-stat-value">30 ft</div>
+                        </div>
+                    </div>
+                    <div class="hp-bar">
+                        <div class="hp-fill"></div>
+                        <div class="hp-text">25 / 25 HP</div>
+                    </div>
+                </div>
+
+                <!-- Characteristics -->
+                <div class="stat-block">
+                    <h3>Characteristics</h3>
+                    <div class="skills-grid">
+                        <div class="skill">
+                            <span class="skill-name">Alignment</span>
+                            <span class="skill-bonus">Lawful Good</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Jenis Kelamin</span>
+                            <span class="skill-bonus">Perempuan</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Mata</span>
+                            <span class="skill-bonus">Emas</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Ukuran</span>
+                            <span class="skill-bonus">Medium</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Tinggi</span>
+                            <span class="skill-bonus">170 cm</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Kepercayaan</span>
+                            <span class="skill-bonus">The Radiant Harmony</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Rambut</span>
+                            <span class="skill-bonus">Platinum</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Kulit</span>
+                            <span class="skill-bonus">Putih</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Umur</span>
+                            <span class="skill-bonus">26 tahun</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Berat</span>
+                            <span class="skill-bonus">60 lb</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Character Gallery -->
+                <div class="stat-block">
+                    <h3>Galeri Karakter</h3>
+                    <div class="character-gallery">
+                        <div class="gallery-item">
+                            <img alt="Token Form Base" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/heroictoken%20(3).png"/>
+                            <div class="image-caption">Token Form Base</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Token Form Fine" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/heroictoken%20(4).png"/>
+                            <div class="image-caption">Token Form Fine</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Token Form Battle" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/heroictoken%20(5).png"/>
+                            <div class="image-caption">Token Form Battle</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Form Base 1" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera1.png"/>
+                            <div class="image-caption">Form Base 1</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Form Base 2" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera2.png"/>
+                            <div class="image-caption">Form Base 2</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Desain Konsep Karakter 1" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera%20(1).png"/>
+                            <div class="image-caption">Desain Konsep Karakter 1</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Desain Konsep Karakter 2" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera%20(2).png"/>
+                            <div class="image-caption">Desain Konsep Karakter 2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backstory -->
+                <div class="stat-block">
+                    <h3>Backstory</h3>
+                    <div class="backstory-content">
+                        <p>Seraphina adalah putri dari House Valorheart, keluarga bangsawan yang bertugas sebagai Guardian Knights untuk Kerajaan Vilhan di Dunia Hijau selama berabad-abad. Namun, dia menyimpan rahasia kelam—Seraphina sebenarnya adalah hasil dari eksperimen sihir kuno yang dilakukan di Sekolah Sihir Arcanum, menggabungkan jiwa manusia dengan esensi celestial dragon. Proyek ini diciptakan sebagai "senjata hidup" untuk melindungi Dunia Hijau dari ancaman supernatural yang mungkin datang dari Dunia Dingin atau organisasi berbahaya.</p>
+                        <p>Meski terlahir dari eksperimen rahasia Arcanum, Seraphina dibesarkan dengan penuh kasih sayang oleh Duke dan Duchess Valorheart, keluarga bangsawan terpandang di Kerajaan Vilhan yang memiliki hubungan erat dengan Raja Mullinen. Dia tumbuh sebagai knight yang idealis, berpegang teguh pada kode kehormatan dan keadilan, sering berkeliling Dunia Hijau untuk membantu Desa Groomwalk dan mempelajari harmoni sosial yang diajarkan di bawah kepemimpinan Maria Uv White.</p>
+                        <p>Tragedi menimpa ketika Kerajaan Vilhan menjadi salah satu target utama serangan brutal dari organisasi Kraken. Seraphina menyaksikan langsung bagaimana orangtua angkatnya dibantai oleh pasukan setengah tengkorak di hadapannya, sementara dia tidak berdaya menghentikannya. Menara-menara sihir yang pernah menjadi kebanggaan Vilhan kini hanya reruntuhan berlumuran darah.</p>
+                        <p>Dengan bermodalkan sumpah suci untuk membalas kematian keluarganya dan melindungi yang tersisa dari kehancuran, Seraphina bergabung dengan satuan elit S.T.A.R.S yang dibentuk oleh PKD. Dia bertekad mengungkap siapa Nona Manis sebenarnya dan menghentikan organisasi Kraken—bahkan jika itu berarti harus menghadapi masa lalu kelam tentang penciptaannya di Arcanum dan kemungkinan koneksi antara eksperimen tersebut dengan kekuatan gelap yang kini mengancam seluruh Haasway Valley.</p>
+                        <p>Kini, sebagai anggota S.T.A.R.S, Seraphina berjuang tidak hanya melawan musuh eksternal, tetapi juga pergulatan internal antara identitasnya sebagai "hasil eksperimen Arcanum" dan keinginannya untuk menjadi manusia sejati yang mampu melindungi harmoni Dunia Hijau yang pernah dia cintai.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="panel right-panel">
+                <!-- Personality -->
+                <div class="stat-block">
+                    <h3>Personality</h3>
+                    <div class="personality-trait">
+                        <div class="trait-label">Ciri Kepribadian</div>
+                        <div class="trait-text">Rakyat jelata mencintai saya karena kebaikan dan kemurahan hati saya. Meskipun kelahiran bangsawan, saya tidak menempatkan diri saya di atas orang lain. Kita semua memiliki darah yang sama.</div>
+                    </div>
+                    <div class="personality-trait">
+                        <div class="trait-label">Ideal</div>
+                        <div class="trait-text">Kewajiban Bangsawan. Ini adalah tugas saya untuk melindungi dan merawat orang-orang di bawah saya. (Baik)</div>
+                    </div>
+                    <div class="personality-trait">
+                        <div class="trait-label">Ikatan</div>
+                        <div class="trait-text">Kesetiaanku kepada penguasaku tidak tergoyahkan.</div>
+                    </div>
+                    <div class="personality-trait">
+                        <div class="trait-label">Kelemahan</div>
+                        <div class="trait-text">Saya menyembunyikan rahasia yang benar-benar skandal yang bisa menghancurkan keluarga saya selamanya.</div>
+                    </div>
+                </div>
+
+                <!-- Appearance -->
+                <div class="stat-block">
+                    <h3>Penampilan</h3>
+                    <div class="trait-text">
+                        Seorang wanita muda Dragonborn yang anggun dengan rambut perak-emas (platinum) dan mata naga emas. 
+                        Mengenakan armor putih-emas atau pakaian bangsawan elegan tergantung tugas. Sisik emas berkilau di sepanjang 
+                        leher dan lengannya, pengingat asal celestial-nya. Senyum tenangnya menyembunyikan beban masa lalu yang menyakitkan.
+                        <br/><br/>
+                        <strong>Detail Fisik:</strong><br/>
+                        Sisik emas yang berkilau lembut, tatapan penuh determinasi, dan aura tenang namun membara ketika membela kebenaran.
+                    </div>
+                </div>
+
+                <!-- Organizations -->
+                <div class="stat-block">
+                    <h3>Organisasi</h3>
+                    <div class="organizations">
+                        <div class="organization">
+                            <div class="org-name">House Valorheart</div>
+                            <div>Keluarga bangsawan yang mengadopsi dan membesarkannya. Dikenal sebagai penjaga kehormatan dan keamanan Kerajaan Vilhan.</div>
+                        </div>
+                        <div class="organization">
+                            <div class="org-name">S.T.A.R.S</div>
+                            <div>Special Tactical Arcane Response Squad - Unit elit yang beroperasi di bawah PKD, dibentuk untuk melawan ancaman supernatural dan organisasi kriminal seperti Kraken.</div>
+                        </div>
+                        <div class="organization">
+                            <div class="org-name">Sekolah Sihir Arcanum</div>
+                            <div>Institusi sihir kuno tempat eksperimen penciptaan Seraphina dilakukan. Meski bukan afiliasi resmi, Arcanum sangat terkait dengan asal-usulnya.</div>
+                        </div>
+                        <div class="organization">
+                            <div class="org-name">Kerajaan Vilhan</div>
+                            <div>Pemerintahan utama di Dunia Hijau yang hancur akibat serangan Kraken. Dulu menjadi rumah dan tujuan pengabdiannya.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Allies -->
+                <div class="stat-block">
+                    <h3>Sekutu</h3>
+                    <ul class="equipment-list">
+                        <li><strong>Maria Uv White:</strong> Tokoh bijak yang mengajarkan harmoni sosial dan nilai-nilai kemanusiaan, menjadi mentor spiritual bagi Seraphina</li>
+                        <li><strong>Duke & Duchess Valorheart:</strong> Orangtua angkat yang membesarkannya dengan kasih sayang. Kematian mereka menjadi pemicu perjuangan Seraphina (almarhum)</li>
+                        <li><strong>Raja Mullinen:</strong> Pemimpin Kerajaan Vilhan dan sekutu dekat keluarga Valorheart</li>
+                        <li><strong>Anggota S.T.A.R.S lainnya:</strong> Rekan seperjuangan Seraphina dalam misi-misi berbahaya, kemungkinan ada beberapa yang sangat dekat atau menjadi pengganti "keluarga"</li>
+                    </ul>
+                </div>
+
+                <!-- Enemies -->
+                <div class="stat-block">
+                    <h3>Musuh</h3>
+                    <ul class="equipment-list">
+                        <li><strong>Organisasi Kraken:</strong> Kelompok jahat yang menghancurkan Kerajaan Vilhan dan membunuh keluarga Valorheart. Diduga terkait dengan kekuatan supernatural dan eksperimen gelap</li>
+                        <li><strong>Nona Manis:</strong> Figur misterius dan tokoh kunci di balik Kraken. Identitas dan tujuannya masih menjadi misteri yang ingin Seraphina bongkar</li>
+                        <li><strong>Entitas dari Dunia Dingin:</strong> Ancaman potensial dari luar Dunia Hijau, sering dikaitkan dengan kekuatan gelap dan supranatural yang berbahaya</li>
+                        <li><strong>Arcanum (dalam bayangannya):</strong> Bukan musuh langsung, tapi mewakili sisi kelam penciptaannya yang masih menjadi beban dalam jiwanya</li>
+                    </ul>
+                </div>
+
+                <!-- Internal Conflict & Goals -->
+                <div class="stat-block">
+                    <h3>Konflik Internal & Tujuan</h3>
+                    <div class="personality-trait">
+                        <div class="trait-label">Konflik Internal</div>
+                        <div class="trait-text">Seraphina terus berjuang melawan bayangan bahwa dirinya bukan entitas "sejati", tetapi hasil eksperimen. Ia bertanya-tanya apakah ia bisa benar-benar memiliki kebebasan dan cinta yang tulus.</div>
+                    </div>
+                    <div class="personality-trait">
+                        <div class="trait-label">Tujuan Utama</div>
+                        <div class="trait-text">Menegakkan keadilan, menghentikan Kraken, dan menemukan jati dirinya di tengah pertarungan antara takdir ciptaan dan kehendak pribadi.</div>
+                    </div>
+                    <div class="personality-trait">
+                        <div class="trait-label">Senjata Khas</div>
+                        <div class="trait-text">Sebuah longsword suci yang diwariskan keluarga Valorheart, bisa menyala dengan cahaya emas saat digunakan dalam pertempuran melawan makhluk kegelapan.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
