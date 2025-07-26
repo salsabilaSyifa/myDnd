@@ -323,7 +323,7 @@
             line-height: 1.6;
         }
 
-        /* Gallery Enhancement */
+       /* Gallery Enhancement */
         .character-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -347,6 +347,12 @@
             box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
         }
 
+        .portrait-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
         .portrait-image {
             width: 100%;
             height: 160px;
@@ -368,7 +374,7 @@
             font-weight: 600;
             letter-spacing: 0.5px;
         }
-
+        
         /* Lists Enhancement */
         .equipment-list, .features-list {
             list-style: none;
@@ -695,6 +701,46 @@
 
             <!-- Center Panel -->
             <div class="panel center-panel">
+                <!-- Character Gallery -->
+                <div class="stat-block">
+                    <h3>Token Karakter</h3>
+                    <div class="character-gallery">
+                        <div class="gallery-item">
+                            <img alt="Token Form Base" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/heroictoken%20(3).png"/>
+                            <div class="image-caption">Token Form Base</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Token Form Fine" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/heroictoken%20(4).png"/>
+                            <div class="image-caption">Token Form Fine</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Token Form Battle" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/heroictoken%20(5).png"/>
+                            <div class="image-caption">Token Form Battle</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-block">
+                    <div class="portrait-gallery">
+                        <h3 class="section-title"><center>Galeri Karakter</center></h3>
+                        <div class="gallery-item">
+                            <img alt="Form Base 1" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera%20(1).jpg"/>
+                            <div class="image-caption">Desain Konsep Karakter 1</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Form Base 2" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera%20(1).jpg"/>
+                            <div class="image-caption">Desain Konsep Karakter 2</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Form Base 1" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera1.png"/>
+                            <div class="image-caption">Form Base 1</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img alt="Form Base 2" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera2.png"/>
+                            <div class="image-caption">Form Base 2</div>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Combat Stats -->
                 <div class="stat-block">
                     <h3>Combat Stats</h3>
@@ -761,41 +807,6 @@
                         <div class="skill">
                             <span class="skill-name">Berat</span>
                             <span class="skill-bonus">60 lb</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Character Gallery -->
-                <div class="stat-block">
-                    <h3>Galeri Karakter</h3>
-                    <div class="character-gallery">
-                        <div class="gallery-item">
-                            <img alt="Token Form Base" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/heroictoken%20(3).png"/>
-                            <div class="image-caption">Token Form Base</div>
-                        </div>
-                        <div class="gallery-item">
-                            <img alt="Token Form Fine" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/heroictoken%20(4).png"/>
-                            <div class="image-caption">Token Form Fine</div>
-                        </div>
-                        <div class="gallery-item">
-                            <img alt="Token Form Battle" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/heroictoken%20(5).png"/>
-                            <div class="image-caption">Token Form Battle</div>
-                        </div>
-                        <div class="gallery-item">
-                            <img alt="Form Base 1" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera1.png"/>
-                            <div class="image-caption">Form Base 1</div>
-                        </div>
-                        <div class="gallery-item">
-                            <img alt="Form Base 2" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera2.png"/>
-                            <div class="image-caption">Form Base 2</div>
-                        </div>
-                        <div class="gallery-item">
-                            <img alt="Desain Konsep Karakter 1" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera%20(1).png"/>
-                            <div class="image-caption">Desain Konsep Karakter 1</div>
-                        </div>
-                        <div class="gallery-item">
-                            <img alt="Desain Konsep Karakter 2" class="portrait-image" src="https://raw.githubusercontent.com/salsabilaSyifa/myDnd/main/images/sera%20(2).png"/>
-                            <div class="image-caption">Desain Konsep Karakter 2</div>
                         </div>
                     </div>
                 </div>
