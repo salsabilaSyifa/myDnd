@@ -2,7 +2,7 @@
 
 ## 📜 Daftar Karakter
 ### 🔹 [Samsara Lú Inanis](https://salsabilasyifa.github.io/myDnd/dndSamsara)
-### 🔹 [Seraphine Elaris](https://salsabilasyifa.github.io/myDnd/dndSeraphine)
+### 🔹 [Seraphina Valorheart](https://salsabilasyifa.github.io/myDnd/dndSeraphina)
 
 ## 🛠 Teknologi
 - 💻 HTML & CSS sederhana
