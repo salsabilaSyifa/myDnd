@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Resmi Candlekeep</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background: linear-gradient(45deg, #2c1810, #4a3420);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .parchment {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #f4e8d0;
+            background-image: 
+                radial-gradient(circle at 20px 20px, #d4c4a8 1px, transparent 1px),
+                linear-gradient(45deg, transparent 49%, rgba(139, 119, 87, 0.1) 50%, transparent 51%);
+            border: 3px solid #8b7757;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 
+                0 0 30px rgba(0,0,0,0.3),
+                inset 0 0 50px rgba(139, 119, 87, 0.1);
+            position: relative;
+        }
+        
+        .parchment::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="%23d4c4a8" opacity="0.3"/><circle cx="75" cy="75" r="0.3" fill="%23a0906f" opacity="0.2"/><circle cx="50" cy="10" r="0.4" fill="%23c4b49a" opacity="0.25"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            pointer-events: none;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #8b7757;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .seal {
+            width: 80px;
+            height: 80px;
+            background: #8b7757;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f4e8d0;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        
+        .title {
+            font-size: 28px;
+            color: #2c1810;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #5a4a3a;
+            margin: 5px 0 0 0;
+            font-style: italic;
+        }
+        
+        .recipient {
+            font-size: 18px;
+            color: #2c1810;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        
+        .content {
+            color: #2c1810;
+            line-height: 1.6;
+            font-size: 16px;
+            text-align: justify;
+        }
+        
+        .paragraph {
+            margin-bottom: 20px;
+        }
+        
+        .signature-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .signature {
+            font-size: 18px;
+            color: #2c1810;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .title-signature {
+            font-size: 14px;
+            color: #5a4a3a;
+            font-style: italic;
+        }
+        
+        .postscript {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #8b7757;
+            font-size: 14px;
+            color: #5a4a3a;
+            font-style: italic;
+        }
+        
+        .date {
+            text-align: right;
+            font-size: 14px;
+            color: #5a4a3a;
+            margin-bottom: 20px;
+        }
+        
+        .emphasis {
+            font-weight: bold;
+            color: #2c1810;
+        }
+    </style>
+</head>
+<body>
+    <div class="parchment">
+        <div class="header">
+            <div class="seal">📚</div>
+            <h1 class="title">CANDLEKEEP</h1>
+            <p class="subtitle">Fortress of Knowledge • Library of the Realms</p>
+        </div>
+        
+        <div class="date">14 Uktar, 1493 DR</div>
+        
+        <div class="recipient">KEPADA YANG TERHORMAT SONEI SHOMAGOTH</div>
+        
+        <div class="content">
+            <div class="paragraph">
+                Setelah deliberasi panjang di antara Keeper of the Tomes dan First Reader, kami dengan ini memberitahukan bahwa masa studi Anda di Candlekeep telah berakhir. Keputusan ini diambil menyusul <span class="emphasis">"eksperimen spiritual berskala berlebihan"</span> yang terjadi pada 15 Kythorn di Great Library, Wing Barat.
+            </div>
+            
+            <div class="paragraph">
+                Kami mengakui kontribusi intelektual Anda selama masa studi, khususnya dalam bidang teori planar mechanics dan divine signal interference. Thesis Anda tentang <span class="emphasis">"Anomalous Divine Channeling Patterns"</span> telah menjadi referensi berharga bagi peneliti fenomena supernatural.
+            </div>
+            
+            <div class="paragraph">
+                Namun, insiden terkini yang mengakibatkan manifestasi portal planar tidak terkontrol, animasi spontan koleksi tome Section M, dan gangguan struktural pada ward protektif Wing Barat memerlukan tindakan preventif. Tim Planar Restoration membutuhkan tiga minggu untuk menormalkan kondisi area tersebut.
+            </div>
+            
+            <div class="paragraph">
+                Kami menekankan bahwa ini bukanlah <span class="emphasis">expulsion</span>, melainkan <span class="emphasis">"graduated departure"</span> mengingat tingkat eksperimen Anda telah melampaui fasilitas keamanan yang tersedia. Candlekeep akan selalu menjadi rumah intelektual bagi Anda, meskipun akses praktik eksperimental tidak lagi tersedia.
+            </div>
+            
+            <div class="paragraph">
+                Semoga perjalanan pencarian ilmu Anda membawa pencerahan yang diharapkan.
+            </div>
+        </div>
+        
+        <div class="signature-section">
+            <div class="signature">First Reader Tethtoril</div>
+            <div class="title-signature">atas nama Council of Readers</div>
+        </div>
+        
+        <div class="postscript">
+            <strong>P.S.</strong> - Mohon kembalikan Tome of Planar Binding yang masih berbicara dalam bahasa Celestial. Kami butuh itu untuk referensi.
+        </div>
+    </div>
+</body>
+</html>
