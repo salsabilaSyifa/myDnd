@@ -2,7 +2,8 @@
 
 ## 📜 Daftar Karakter
 ### 🔹 [Samsara Lú Inanis](https://salsabilasyifa.github.io/myDnd/dndSamsara)
-### 🔹 [Seraphina Valorheart](https://salsabilasyifa.github.io/myDnd/dndSeraphina)
+### 🔹 [Seraphina Valoheart](https://salsabilasyifa.github.io/myDnd/dndSeraphina)
+### 🔹 [Sonei Shomagoth](https://salsabilasyifa.github.io/myDnd/dndSonei)
 
 ## 🛠 Teknologi
 - 💻 HTML & CSS sederhana
